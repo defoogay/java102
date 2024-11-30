@@ -3,6 +3,7 @@ import java.util.ArrayList;
 public class Grid<T> {
 	private final ArrayList<ArrayList<T>> grid;
 	public final int sideLength;
+    private static int greastestSide = 0;
 
 	public Grid(int sideLength, T defaultVal) {
 		this.sideLength = sideLength;
@@ -13,6 +14,9 @@ public class Grid<T> {
 				grid.get(i).add(defaultVal);
 			}
 		}
+        if (sideLength > greastestSide) {
+            greastestSide = sideLength;
+        }
 	}
 
 	public T getRC(int row, int col) {
@@ -40,5 +44,8 @@ public class Grid<T> {
             newArray.add(getRC(i,i));
         }
         return newArray;
+    }
+    public static int maxSideLength() {
+        return greastestSide;
     }
 }
