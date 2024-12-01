@@ -1,3 +1,4 @@
+package Classes;
 public class Square implements Shape {
 	public final Point corner;
 	public final double sideLength;
@@ -72,7 +73,8 @@ public class Square implements Shape {
         arrC[3] = corner4;
         return arrC;
 	}
-	@Override
+	
+    @Override
 	public String toString() {
 		return "(corner: " + corner + "; side length: " + sideLength + ")";
 	}

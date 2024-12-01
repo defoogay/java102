@@ -1,3 +1,4 @@
+package Classes;
 public class RightTriangle implements Shape {
     public final Point corner;
     public final double side1;
@@ -38,5 +39,33 @@ public class RightTriangle implements Shape {
         else {
             return false;
         }
+    }
+    public boolean isOn(Point p) {
+        boolean truthvalue = false;
+        Point one = new Point(corner.x, corner.y);
+        Point two = new Point(corner.x + side2, corner.y);
+        Point three = new Point(corner.x, corner.y + side1);
+
+        double slope = (three.y - two.y) / (three.x - two.x);
+        double yint = three.y - slope * three.x;
+
+        if ((one.x == three.x && one.x == p.x) || 
+            (one.x == two.x && one.x == p.x) ||
+            (p.y == slope * p.x + yint)) {
+                return truthvalue = true;
+        }
+        return truthvalue;
+    }
+    
+    public double area() {
+        return side1 * side2 / 2;
+    }
+    
+    public double perimeter() {
+        return side1 + side2 + side3;
+    }
+
+    public RightTriangle translate(double x, double y) {
+        return new RightTriangle(new Point(corner.x + x, corner.y + y), side1, side2);
     }
 }

@@ -1,3 +1,4 @@
+package Classes;
 public interface Shape {
     double area();
     public double perimeter();

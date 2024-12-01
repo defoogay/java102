@@ -1,3 +1,4 @@
+package Classes;
 import java.util.ArrayList;
 
 public class Grid<T> {
@@ -38,6 +39,7 @@ public class Grid<T> {
 		}
 		return str;
 	}
+    
     public ArrayList<T> diagonal() {
         ArrayList<T> newArray = new ArrayList<>();
         for(int i = 0; i < sideLength; i++) {
@@ -45,6 +47,7 @@ public class Grid<T> {
         }
         return newArray;
     }
+    
     public static int maxSideLength() {
         return greastestSide;
     }
