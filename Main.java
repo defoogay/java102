@@ -41,18 +41,4 @@ public class Main {
         }
         return scaled;
     }
-    public static void returnAll(LibraryItem[] items) {
-        for (LibraryItem item : items) {
-            item.returnItem();
-        }
-    }
-    public static ArrayList<LibraryItem> availableItems(LibraryItem[] items) {
-        ArrayList<LibraryItem> allAvailable = new ArrayList<>();
-        for (LibraryItem item : items) {
-            if (item.available()) {
-                allAvailable.add(item);
-            }
-        }
-        return allAvailable;
-    }
 }

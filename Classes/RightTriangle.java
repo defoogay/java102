@@ -68,4 +68,10 @@ public class RightTriangle implements Shape {
     public RightTriangle translate(double x, double y) {
         return new RightTriangle(new Point(corner.x + x, corner.y + y), side1, side2);
     }
+
+    public static boolean similar(RightTriangle a, RightTriangle b) {
+        double ratioOne = a.side1 / b.side2;
+        double ratioTwo = a.side1 / b.side2;
+        return ratioOne == ratioTwo;
+    }
 }
